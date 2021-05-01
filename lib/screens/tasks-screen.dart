@@ -9,15 +9,17 @@ class TasksScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.lightBlueAccent,
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.lightBlueAccent,
+        child: Icon(Icons.add),
         onPressed: () {
           showModalBottomSheet(
-              context: context, builder: (context) => AddTaskScreen());
+            context: context,
+            isScrollControlled: true,
+            builder: (context) => SingleChildScrollView(
+              child: AddTaskScreen(),
+            ),
+          );
         },
-        backgroundColor: Colors.lightBlueAccent,
-        child: Icon(
-          Icons.add,
-          color: Colors.white,
-        ),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
