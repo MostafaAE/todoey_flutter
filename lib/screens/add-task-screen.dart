@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:todoey_flutter/models/task-data.dart';
+import 'package:todoey_flutter/models/task.dart';
 
 class AddTaskScreen extends StatelessWidget {
-  AddTaskScreen({this.addTaskCallBack});
+  AddTaskScreen();
 
   String taskTitle;
-  final Function addTaskCallBack;
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +65,8 @@ class AddTaskScreen extends StatelessWidget {
               ),
               onPressed: () {
                 if (taskTitle != null) {
-                  addTaskCallBack(taskTitle);
+                  final task = Task(name: taskTitle);
+                  Provider.of<TaskData>(context, listen: false).add(task);
                   Navigator.pop(context);
                 }
               },

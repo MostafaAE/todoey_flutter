@@ -1,17 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:todoey_flutter/models/Task.dart';
+import 'package:provider/provider.dart';
+import 'package:todoey_flutter/models/task-data.dart';
 import 'package:todoey_flutter/widgets/tasks-list.dart';
 
 import 'add-task-screen.dart';
 
-List<Task> tasks = [];
-
-class TasksScreen extends StatefulWidget {
-  @override
-  _TasksScreenState createState() => _TasksScreenState();
-}
-
-class _TasksScreenState extends State<TasksScreen> {
+class TasksScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,13 +18,7 @@ class _TasksScreenState extends State<TasksScreen> {
             context: context,
             isScrollControlled: true,
             builder: (context) => SingleChildScrollView(
-              child: AddTaskScreen(
-                addTaskCallBack: (String taskName) {
-                  setState(() {
-                    tasks.add(Task(name: taskName));
-                  });
-                },
-              ),
+              child: AddTaskScreen(),
             ),
           );
         },
@@ -65,7 +53,7 @@ class _TasksScreenState extends State<TasksScreen> {
                   ),
                 ),
                 Text(
-                  '${tasks.length} Tasks',
+                  '${Provider.of<TaskData>(context).taskCount} Tasks',
                   style: TextStyle(
                     fontSize: 15,
                     color: Colors.white,
