@@ -11,5 +11,5 @@ This Application is implemented using Flutter & Dart
 * Check completed tasks.
 * Remove any task from the list by long pressing on it.
 
-![Todoey Demo](https://user-images.githubusercontent.com/47731377/116857317-e068b980-abfc-11eb-906d-41245605fdf1.gif)
+![Todoey Demo](https://user-images.githubusercontent.com/47731377/116859514-64707080-ac00-11eb-9477-de7e7a171b74.gif)
 
