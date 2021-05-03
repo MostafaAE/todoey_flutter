@@ -1,13 +1,13 @@
 # Todoey Flutter
 
-To Do List Project using Flutter
+To Do List Mobile Application using Flutter
 
 ## Overview
-Todoey is a to-do-list app that will help you to keep track of all your tasks.
-This Application is implemented using Flutter & Dart 
+Todoey is a to-do-list app that will help you to keep track of all your tasks and goals 🎯.
+This Application is implemented using Flutter & Dart.
 
 ## Features
-* Add a new task throught a bottom sheet.
+* Add a new task through a bottom sheet.
 * Check completed tasks.
 * Remove any task from the list by long pressing on it.
 
